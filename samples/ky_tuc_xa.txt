@@ -1,0 +1,2 @@
+Ký túc xá của trường có phòng cho sinh viên năm nhất và sinh viên các năm tiếp theo. Phí ký túc xá là 1,5 triệu mỗi tháng cho phòng bốn người. Sinh viên phải đóng phí ký túc xá đúng hạn vào đầu mỗi học kỳ.
+Sinh viên phải giữ gìn vệ sinh chung và tuân thủ giờ giới nghiêm của ký túc xá. Sinh viên vi phạm nội quy sẽ bị nhắc nhở và có thể bị buộc rời khỏi ký túc xá. Khách đến thăm phải đăng ký với bảo vệ trước khi vào.

@@ -1,0 +1,515 @@
+[
+  {
+    "id": "syntax_error",
+    "ten": "Lỗi cú pháp (SyntaxError)",
+    "error_type": [
+      "SyntaxError"
+    ],
+    "trieu_chung": "code viết sai ngữ pháp python thiếu dấu ngoặc thiếu dấu hai chấm thiếu dấu nháy quên đóng ngoặc chương trình không chạy được ngay từ đầu báo lỗi ở dòng",
+    "thong_bao_mau": [
+      "invalid syntax",
+      "'(' was never closed",
+      "expected ':'",
+      "unterminated string literal",
+      "unmatched ')'",
+      "EOL while scanning string literal"
+    ],
+    "chan_doan": "Python không hiểu được câu lệnh vì cú pháp sai. Nguyên nhân hay gặp: thiếu hoặc thừa dấu ngoặc, thiếu dấu hai chấm (:) sau if/for/while/def, quên đóng dấu nháy, hoặc dùng = thay cho == trong điều kiện. Lỗi thường nằm ở dòng được báo HOẶC dòng ngay phía trên nó.",
+    "don_thuoc": [
+      "Xem kỹ dòng được báo và dòng ngay trước đó.",
+      "Đếm số dấu ngoặc mở và đóng xem có khớp không.",
+      "Kiểm tra if/for/while/def/class có dấu hai chấm ở cuối dòng.",
+      "Kiểm tra mọi chuỗi đều được đóng dấu nháy."
+    ],
+    "vi_du": "if x > 5          # thiếu dấu :\n    print(\"lớn\")\n\n# Sửa:\nif x > 5:\n    print(\"lớn\")"
+  },
+  {
+    "id": "indentation_error",
+    "ten": "Lỗi thụt lề (IndentationError)",
+    "error_type": [
+      "IndentationError",
+      "TabError"
+    ],
+    "trieu_chung": "thụt lề sai khoảng trắng tab dòng code lệch hàng sau if for def không thụt vào các dòng không thẳng hàng",
+    "thong_bao_mau": [
+      "expected an indented block",
+      "unexpected indent",
+      "unindent does not match any outer indentation level",
+      "inconsistent use of tabs and spaces in indentation"
+    ],
+    "chan_doan": "Python dùng thụt lề để xác định khối lệnh nên thụt lề sai là lỗi. Hay gặp: quên thụt vào sau if/for/while/def, các dòng cùng khối thụt không bằng nhau, hoặc trộn lẫn phím Tab và dấu cách.",
+    "don_thuoc": [
+      "Dòng ngay sau if/for/while/def phải thụt vào (thường 4 dấu cách).",
+      "Các dòng cùng một khối phải thụt lề bằng nhau.",
+      "Không trộn Tab với dấu cách; trong VS Code dùng 'Convert Indentation to Spaces'.",
+      "Khối lệnh chưa có nội dung thì tạm dùng pass."
+    ],
+    "vi_du": "def chao():\nprint(\"hi\")        # lỗi: chưa thụt lề\n\n# Sửa:\ndef chao():\n    print(\"hi\")"
+  },
+  {
+    "id": "name_error",
+    "ten": "Tên chưa được định nghĩa (NameError)",
+    "error_type": [
+      "NameError"
+    ],
+    "trieu_chung": "biến chưa định nghĩa chưa khai báo gõ sai tên biến tên hàm viết hoa viết thường dùng biến trước khi gán quên import quên dấu nháy quanh chuỗi",
+    "thong_bao_mau": [
+      "name 'x' is not defined",
+      "name 'total' is not defined",
+      "name 'math' is not defined"
+    ],
+    "chan_doan": "Python gặp một cái tên (biến, hàm, module) mà nó chưa biết. Nguyên nhân: gõ sai chính tả hoặc sai chữ hoa/thường (Python phân biệt hoa thường), dùng biến trước khi gán giá trị, quên import module, hoặc quên đặt chuỗi trong dấu nháy (viết hello thay vì \"hello\").",
+    "don_thuoc": [
+      "So sánh tên trong thông báo lỗi với tên bạn đã khai báo, từng chữ một.",
+      "Đảm bảo biến được gán giá trị TRƯỚC dòng sử dụng nó.",
+      "Nếu dùng module như math, random thì kiểm tra đã import chưa.",
+      "Nếu là chữ thông thường, hãy đặt trong dấu nháy."
+    ],
+    "vi_du": "print(ten)          # NameError nếu chưa có dòng gán ten\n\n# Sửa:\nten = \"An\"\nprint(ten)"
+  },
+  {
+    "id": "type_concat",
+    "ten": "Cộng chuỗi với số (TypeError)",
+    "error_type": [
+      "TypeError"
+    ],
+    "trieu_chung": "cộng chuỗi với số nối chuỗi với số in ra kèm số input trả về chuỗi cộng trừ nhân không được hai kiểu dữ liệu khác nhau nhập số từ bàn phím tính toán lỗi",
+    "thong_bao_mau": [
+      "can only concatenate str (not \"int\") to str",
+      "unsupported operand type(s) for +: 'int' and 'str'",
+      "unsupported operand type(s) for -: 'str' and 'int'"
+    ],
+    "chan_doan": "Bạn đang cộng hoặc tính toán giữa hai kiểu dữ liệu khác nhau (chuỗi và số). Lưu ý: input() luôn trả về chuỗi, dù người dùng gõ vào một con số.",
+    "don_thuoc": [
+      "Đổi kiểu trước khi tính: int(...) hoặc float(...) cho dữ liệu từ input().",
+      "Khi muốn in số kèm chữ, dùng f-string: f\"Tuổi: {tuoi}\".",
+      "Hoặc dùng str(so) để biến số thành chuỗi trước khi nối."
+    ],
+    "vi_du": "tuoi = input(\"Tuổi: \")\nprint(tuoi + 1)           # lỗi: tuoi là chuỗi\n\n# Sửa:\ntuoi = int(input(\"Tuổi: \"))\nprint(tuoi + 1)"
+  },
+  {
+    "id": "type_args_count",
+    "ten": "Sai số lượng đối số khi gọi hàm (TypeError)",
+    "error_type": [
+      "TypeError"
+    ],
+    "trieu_chung": "gọi hàm thiếu tham số thừa tham số truyền sai số lượng đối số hàm cần mấy tham số self method class quên self truyền thừa đối số",
+    "thong_bao_mau": [
+      "takes 2 positional arguments but 3 were given",
+      "missing 1 required positional argument: 'x'",
+      "takes 0 positional arguments but 1 was given",
+      "got an unexpected keyword argument"
+    ],
+    "chan_doan": "Số đối số khi gọi hàm không khớp số tham số khi định nghĩa hàm. Với phương thức trong class, Python tự truyền thêm self nên nếu quên khai báo self sẽ báo thừa một đối số.",
+    "don_thuoc": [
+      "So khớp số tham số trong def với số giá trị truyền khi gọi hàm.",
+      "Với hàm trong class, tham số đầu tiên phải là self.",
+      "Nếu tham số có giá trị mặc định, kiểm tra tên tham số khi truyền theo tên (keyword)."
+    ],
+    "vi_du": "def cong(a, b):\n    return a + b\n\ncong(1, 2, 3)     # lỗi: truyền 3 giá trị, hàm chỉ nhận 2"
+  },
+  {
+    "id": "none_attribute",
+    "ten": "Biến có giá trị None (AttributeError/TypeError)",
+    "error_type": [
+      "AttributeError",
+      "TypeError"
+    ],
+    "trieu_chung": "biến là None giá trị None hàm không trả về gì quên return sort append gán lại bằng None NoneType không có thuộc tính hàm trả về rỗng",
+    "thong_bao_mau": [
+      "'NoneType' object has no attribute 'append'",
+      "'NoneType' object is not subscriptable",
+      "'NoneType' object is not iterable",
+      "'NoneType' object has no attribute 'split'"
+    ],
+    "chan_doan": "Biến đang có giá trị None thay vì giá trị bạn mong đợi. Hay gặp: hàm quên lệnh return, hoặc gán lại kết quả của hàm sửa tại chỗ như list.sort() hay list.append() (những hàm này trả về None).",
+    "don_thuoc": [
+      "In biến ra (print) ngay trước dòng lỗi để xem giá trị thật.",
+      "Kiểm tra hàm có lệnh return ở mọi nhánh (if/else).",
+      "Đừng viết x = x.sort(); chỉ gọi x.sort() hoặc dùng x = sorted(x)."
+    ],
+    "vi_du": "nums = [3, 1, 2]\nnums = nums.sort()      # nums trở thành None\nprint(nums[0])          # lỗi\n\n# Sửa:\nnums.sort()\nprint(nums[0])"
+  },
+  {
+    "id": "module_shadow",
+    "ten": "Tên file trùng tên thư viện (AttributeError/ImportError)",
+    "error_type": [
+      "AttributeError",
+      "ImportError"
+    ],
+    "trieu_chung": "đặt tên file trùng tên thư viện random.py math.py test.py file của mình trùng tên module chuẩn partially initialized module import vòng tròn circular import",
+    "thong_bao_mau": [
+      "module 'random' has no attribute 'randint'",
+      "partially initialized module 'x' has no attribute (most likely due to a circular import)",
+      "cannot import name 'x' from partially initialized module 'y'"
+    ],
+    "chan_doan": "Rất có thể file của bạn có tên trùng với một thư viện (ví dụ random.py, math.py, test.py) nên Python import nhầm file của bạn thay vì thư viện thật. Cũng có thể hai file import lẫn nhau (import vòng tròn).",
+    "don_thuoc": [
+      "Kiểm tra thư mục dự án có file nào trùng tên thư viện đang import không, rồi đổi tên.",
+      "Xóa thư mục __pycache__ sau khi đổi tên.",
+      "Nếu hai file import lẫn nhau, chuyển phần dùng chung sang một file thứ ba."
+    ],
+    "vi_du": "# File của bạn tên random.py\nimport random\nrandom.randint(1, 6)   # lỗi: đang import chính file random.py của bạn\n\n# Sửa: đổi tên file thành game.py"
+  },
+  {
+    "id": "index_error",
+    "ten": "Chỉ số vượt phạm vi (IndexError)",
+    "error_type": [
+      "IndexError"
+    ],
+    "trieu_chung": "truy cập vị trí không tồn tại trong danh sách chỉ số vượt quá độ dài list index vòng lặp range len phần tử cuối danh sách rỗng",
+    "thong_bao_mau": [
+      "list index out of range",
+      "string index out of range",
+      "tuple index out of range"
+    ],
+    "chan_doan": "Bạn truy cập một vị trí không tồn tại. Danh sách có n phần tử thì chỉ số hợp lệ là 0 đến n-1 (không phải đến n). Danh sách rỗng thì không có phần tử nào.",
+    "don_thuoc": [
+      "Kiểm tra len(danh_sach) trước khi truy cập.",
+      "Dùng for item in danh_sach thay vì tự quản lý chỉ số.",
+      "Nếu dùng range, nhớ range(len(x)) chạy từ 0 đến len(x)-1.",
+      "Kiểm tra danh sách có bị rỗng không."
+    ],
+    "vi_du": "ds = [10, 20, 30]\nprint(ds[3])        # lỗi: chỉ số hợp lệ là 0, 1, 2\nprint(ds[-1])       # lấy phần tử cuối: 30"
+  },
+  {
+    "id": "key_error",
+    "ten": "Khóa không tồn tại trong từ điển (KeyError)",
+    "error_type": [
+      "KeyError"
+    ],
+    "trieu_chung": "từ điển dict khóa không tồn tại truy cập key không có lấy giá trị từ dict sai tên khóa",
+    "thong_bao_mau": [
+      "KeyError: 'name'",
+      "KeyError: 'ten'",
+      "KeyError: 0"
+    ],
+    "chan_doan": "Bạn lấy giá trị bằng một khóa không có trong từ điển. Hay do gõ sai khóa, sai chữ hoa/thường, thừa khoảng trắng, hoặc dữ liệu chưa được thêm vào.",
+    "don_thuoc": [
+      "Dùng d.get(khoa, mac_dinh) để không bị lỗi khi thiếu khóa.",
+      "Kiểm tra bằng 'khoa in d' trước khi truy cập.",
+      "In d.keys() để xem các khóa thực sự có.",
+      "Chú ý chữ hoa/thường và khoảng trắng thừa trong khóa."
+    ],
+    "vi_du": "sv = {\"ten\": \"An\"}\nprint(sv[\"tuoi\"])             # lỗi\nprint(sv.get(\"tuoi\", 0))      # an toàn: in 0"
+  },
+  {
+    "id": "value_error",
+    "ten": "Giá trị không hợp lệ (ValueError)",
+    "error_type": [
+      "ValueError"
+    ],
+    "trieu_chung": "đổi chuỗi sang số lỗi người dùng nhập chữ thay vì số int float input nhập sai định dạng unpack không đủ giá trị",
+    "thong_bao_mau": [
+      "invalid literal for int() with base 10: 'abc'",
+      "could not convert string to float: 'x'",
+      "too many values to unpack (expected 2)",
+      "not enough values to unpack (expected 3, got 2)"
+    ],
+    "chan_doan": "Giá trị có đúng kiểu nhưng nội dung không hợp lệ, ví dụ int('abc'), int('3.5') hoặc chuỗi rỗng. Thường do người dùng nhập sai, hoặc chuỗi còn khoảng trắng/ký tự thừa. Cũng gặp khi giải nén (unpack) số giá trị không khớp số biến.",
+    "don_thuoc": [
+      "Bọc phép chuyển đổi trong try/except ValueError rồi yêu cầu nhập lại.",
+      "Dùng .strip() để bỏ khoảng trắng thừa trước khi chuyển.",
+      "Với chuỗi '3.5' cần int(float(s)).",
+      "Khi unpack, kiểm tra số giá trị bằng số biến nhận."
+    ],
+    "vi_du": "try:\n    n = int(input(\"Nhập số: \"))\nexcept ValueError:\n    print(\"Bạn phải nhập một số nguyên.\")"
+  },
+  {
+    "id": "zero_division",
+    "ten": "Chia cho 0 (ZeroDivisionError)",
+    "error_type": [
+      "ZeroDivisionError"
+    ],
+    "trieu_chung": "chia cho 0 mẫu số bằng 0 chia cho không trung bình danh sách rỗng phép chia lỗi",
+    "thong_bao_mau": [
+      "division by zero",
+      "integer division or modulo by zero",
+      "float division by zero"
+    ],
+    "chan_doan": "Phép chia có mẫu số bằng 0. Rất hay gặp khi tính trung bình của danh sách rỗng (len = 0) hoặc mẫu số lấy từ dữ liệu người dùng nhập.",
+    "don_thuoc": [
+      "Kiểm tra mẫu số khác 0 trước khi chia.",
+      "Với trung bình, kiểm tra danh sách có phần tử rồi mới chia.",
+      "Hoặc dùng try/except ZeroDivisionError để xử lý riêng."
+    ],
+    "vi_du": "ds = []\nprint(sum(ds) / len(ds))     # lỗi: len = 0\n\n# Sửa:\nprint(sum(ds) / len(ds) if ds else 0)"
+  },
+  {
+    "id": "file_not_found",
+    "ten": "Không tìm thấy file (FileNotFoundError)",
+    "error_type": [
+      "FileNotFoundError"
+    ],
+    "trieu_chung": "không tìm thấy file mở file lỗi đường dẫn sai thư mục chạy open đọc file txt csv no such file or directory chạy từ ide khác chạy từ terminal",
+    "thong_bao_mau": [
+      "[Errno 2] No such file or directory: 'data.txt'",
+      "[WinError 2] The system cannot find the file specified",
+      "[WinError 3] The system cannot find the path specified"
+    ],
+    "chan_doan": "Python không thấy file ở đường dẫn bạn đưa. Đường dẫn tương đối được tính từ thư mục đang chạy chương trình (working directory), không phải từ nơi file .py nằm; chạy từ IDE và từ terminal có thể cho kết quả khác nhau. Cũng hay do sai tên hoặc đuôi file (ví dụ data.txt.txt).",
+    "don_thuoc": [
+      "In os.getcwd() để biết Python đang đứng ở thư mục nào.",
+      "Dùng đường dẫn tính từ vị trí file code: os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data.txt').",
+      "Kiểm tra kỹ tên file và phần đuôi mở rộng (Windows hay ẩn đuôi).",
+      "Đảm bảo file thực sự nằm trong thư mục bạn nghĩ."
+    ],
+    "vi_du": "import os\nBASE = os.path.dirname(os.path.abspath(__file__))\npath = os.path.join(BASE, \"samples\", \"a.txt\")\nwith open(path, encoding=\"utf-8\") as f:\n    text = f.read()"
+  },
+  {
+    "id": "module_not_found",
+    "ten": "Không tìm thấy module (ModuleNotFoundError)",
+    "error_type": [
+      "ModuleNotFoundError"
+    ],
+    "trieu_chung": "cài thư viện rồi mà vẫn báo không tìm thấy module pip install xong vẫn lỗi import thư viện chưa cài môi trường ảo venv python khác no module named",
+    "thong_bao_mau": [
+      "No module named 'requests'",
+      "No module named 'sentence_transformers'",
+      "No module named 'numpy'"
+    ],
+    "chan_doan": "Bản Python đang chạy code không thấy thư viện đó. Hai nguyên nhân phổ biến: (1) chưa cài; (2) đã cài nhưng vào một bản Python KHÁC với bản đang chạy code, ví dụ cài vào Python hệ thống nhưng IDE chạy bằng môi trường ảo .venv. Lưu ý tên cài và tên import đôi khi khác nhau (pip install scikit-learn nhưng import sklearn).",
+    "don_thuoc": [
+      "Xem lệnh chạy hoặc IDE đang dùng python.exe nào (đường dẫn trong thông báo lỗi).",
+      "Cài bằng đúng Python đó: <đường dẫn python> -m pip install <tên thư viện>.",
+      "Dùng 'python -m pip' thay vì 'pip' để chắc chắn cài đúng chỗ.",
+      "Kiểm tra tên thư viện: tên để cài và tên để import có thể khác nhau."
+    ],
+    "vi_du": ".\\.venv\\Scripts\\python.exe -m pip install sentence-transformers"
+  },
+  {
+    "id": "import_name",
+    "ten": "Không import được tên từ module (ImportError)",
+    "error_type": [
+      "ImportError"
+    ],
+    "trieu_chung": "import tên hàm không có trong module sai tên hàm from import sai chính tả hàm chưa viết không import được hàm",
+    "thong_bao_mau": [
+      "cannot import name 'tinh' from 'utils'",
+      "cannot import name 'x' from 'y' (unknown location)"
+    ],
+    "chan_doan": "Module tìm thấy được nhưng bên trong không có tên bạn muốn import: gõ sai tên, hàm chưa được định nghĩa, hoặc thư viện đã đổi tên ở phiên bản mới.",
+    "don_thuoc": [
+      "Mở file module và kiểm tra tên hàm/biến có đúng chính tả không.",
+      "Đảm bảo hàm đó đã được định nghĩa (def) trong module.",
+      "Với thư viện ngoài, xem tài liệu phiên bản đang dùng."
+    ],
+    "vi_du": "# utils.py có hàm tinh_tong, nhưng bạn viết:\nfrom utils import tinh      # lỗi\nfrom utils import tinh_tong  # đúng"
+  },
+  {
+    "id": "unicode_error",
+    "ten": "Lỗi bảng mã (UnicodeDecodeError/UnicodeEncodeError)",
+    "error_type": [
+      "UnicodeDecodeError",
+      "UnicodeEncodeError"
+    ],
+    "trieu_chung": "đọc file tiếng Việt bị lỗi font lỗi mã hóa encoding utf-8 in ra tiếng Việt lỗi file không phải utf-8 ký tự lạ lỗi charmap codec",
+    "thong_bao_mau": [
+      "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+      "'charmap' codec can't encode character",
+      "'charmap' codec can't decode byte"
+    ],
+    "chan_doan": "File hoặc terminal đang dùng một bảng mã khác UTF-8. Trên Windows, open() mặc định có thể dùng bảng mã cục bộ (như cp1252) thay vì UTF-8, nên đọc/ghi tiếng Việt dễ lỗi.",
+    "don_thuoc": [
+      "Luôn mở file với open(path, encoding=\"utf-8\").",
+      "Lưu file văn bản ở dạng UTF-8 (VS Code hiển thị ở góc dưới bên phải).",
+      "Nếu lỗi khi in ra, dùng sys.stdout.reconfigure(encoding=\"utf-8\")."
+    ],
+    "vi_du": "with open(\"a.txt\", encoding=\"utf-8\") as f:\n    text = f.read()"
+  },
+  {
+    "id": "recursion_error",
+    "ten": "Đệ quy quá sâu (RecursionError)",
+    "error_type": [
+      "RecursionError"
+    ],
+    "trieu_chung": "hàm tự gọi chính nó mãi đệ quy không dừng thiếu điều kiện dừng stack overflow gọi hàm lồng nhau quá sâu",
+    "thong_bao_mau": [
+      "maximum recursion depth exceeded",
+      "maximum recursion depth exceeded while calling a Python object",
+      "maximum recursion depth exceeded in comparison"
+    ],
+    "chan_doan": "Hàm đệ quy gọi chính nó quá nhiều lần mà không dừng. Thường do thiếu điều kiện dừng (base case) hoặc tham số không tiến dần về điều kiện dừng.",
+    "don_thuoc": [
+      "Kiểm tra hàm có điều kiện dừng và điều kiện đó có thể xảy ra.",
+      "Đảm bảo mỗi lần gọi đệ quy, tham số tiến gần hơn đến điều kiện dừng.",
+      "Nếu dữ liệu rất lớn, cân nhắc đổi sang vòng lặp."
+    ],
+    "vi_du": "def giai_thua(n):\n    if n == 0:          # điều kiện dừng\n        return 1\n    return n * giai_thua(n - 1)"
+  },
+  {
+    "id": "str_immutable",
+    "ten": "Sửa chuỗi/tuple (TypeError)",
+    "error_type": [
+      "TypeError"
+    ],
+    "trieu_chung": "sửa ký tự trong chuỗi gán chuỗi[0] đổi một chữ trong string tuple không sửa được bất biến không gán được phần tử",
+    "thong_bao_mau": [
+      "'str' object does not support item assignment",
+      "'tuple' object does not support item assignment"
+    ],
+    "chan_doan": "Chuỗi (str) và tuple là kiểu bất biến: không thể sửa từng phần tử tại chỗ.",
+    "don_thuoc": [
+      "Tạo chuỗi mới: s = 'X' + s[1:].",
+      "Hoặc đổi sang list, sửa, rồi nối lại: list(s) ... ''.join(...).",
+      "Nếu cần dữ liệu sửa được, dùng list thay vì tuple."
+    ],
+    "vi_du": "s = \"hello\"\ns[0] = \"H\"                 # lỗi\ns = \"H\" + s[1:]           # đúng"
+  },
+  {
+    "id": "list_indices",
+    "ten": "Chỉ số danh sách không phải số (TypeError)",
+    "error_type": [
+      "TypeError"
+    ],
+    "trieu_chung": "dùng chuỗi làm chỉ số danh sách truy cập list bằng tên thay vì số nhầm list và dict input chuỗi làm index",
+    "thong_bao_mau": [
+      "list indices must be integers or slices, not str",
+      "string indices must be integers",
+      "tuple indices must be integers or slices, not str"
+    ],
+    "chan_doan": "Chỉ số của list/chuỗi/tuple phải là số nguyên. Hay do nhầm list với dict, hoặc dùng giá trị nhận từ input() (là chuỗi) làm chỉ số.",
+    "don_thuoc": [
+      "Chuyển bằng int() nếu chỉ số đến từ input().",
+      "Nếu muốn truy cập theo tên, dùng dict thay vì list.",
+      "Dùng print(type(x)) để kiểm tra kiểu của biến."
+    ],
+    "vi_du": "ds = [10, 20, 30]\nvi_tri = input(\"Vị trí: \")\nprint(ds[vi_tri])        # lỗi: vi_tri là chuỗi\nprint(ds[int(vi_tri)])   # đúng"
+  },
+  {
+    "id": "unbound_local",
+    "ten": "Biến cục bộ dùng trước khi gán (UnboundLocalError)",
+    "error_type": [
+      "UnboundLocalError"
+    ],
+    "trieu_chung": "biến toàn cục trong hàm sửa biến bên ngoài hàm biến cục bộ chưa gán khai báo global đếm biến trong hàm",
+    "thong_bao_mau": [
+      "local variable 'count' referenced before assignment",
+      "cannot access local variable 'x' where it is not associated with a value"
+    ],
+    "chan_doan": "Trong hàm, nếu bạn gán giá trị cho một biến thì Python coi nó là biến cục bộ của hàm. Đọc nó trước khi gán sẽ lỗi, dù bên ngoài hàm có biến cùng tên.",
+    "don_thuoc": [
+      "Truyền giá trị vào hàm qua tham số và trả kết quả bằng return (cách nên dùng).",
+      "Hoặc khai báo global ten_bien ở đầu hàm (hạn chế dùng).",
+      "Gán giá trị ban đầu cho biến trước khi dùng nó trong hàm."
+    ],
+    "vi_du": "dem = 0\ndef tang():\n    dem = dem + 1       # lỗi\n\n# Sửa:\ndef tang(dem):\n    return dem + 1"
+  },
+  {
+    "id": "infinite_loop",
+    "ten": "Vòng lặp vô hạn (chương trình treo)",
+    "error_type": [],
+    "trieu_chung": "chương trình chạy mãi không dừng bị treo vòng lặp vô hạn while true không thoát in mãi không ngừng terminal đứng im không thoát được vòng lặp",
+    "thong_bao_mau": [],
+    "chan_doan": "Điều kiện lặp không bao giờ trở thành sai. Ví dụ: quên cập nhật biến đếm trong while, cập nhật sai hướng, hoặc dùng while True mà không có lệnh break nào chạy tới.",
+    "don_thuoc": [
+      "Nhấn Ctrl+C trong terminal để dừng chương trình.",
+      "Kiểm tra biến trong điều kiện while có thật sự thay đổi sau mỗi vòng lặp.",
+      "Nếu dùng while True, đảm bảo có break được thực thi khi đủ điều kiện.",
+      "Thêm print() biến điều khiển để xem nó thay đổi thế nào."
+    ],
+    "vi_du": "i = 0\nwhile i < 5:\n    print(i)\n    # quên i += 1  -> lặp mãi"
+  },
+  {
+    "id": "assertion_error",
+    "ten": "Test không qua (AssertionError)",
+    "error_type": [
+      "AssertionError"
+    ],
+    "trieu_chung": "test bị fail assert sai kết quả khác mong đợi chạy test bị lỗi kiểm thử không qua so sánh số thực",
+    "thong_bao_mau": [
+      "AssertionError",
+      "AssertionError: 3 != 4"
+    ],
+    "chan_doan": "Một lệnh assert kiểm tra điều kiện sai: kết quả thực tế khác kết quả mong đợi. Đây không phải lỗi cú pháp, mà test đang báo rằng code (hoặc chính test) có vấn đề.",
+    "don_thuoc": [
+      "Xem dòng assert bị báo và in giá trị thực tế ra để đối chiếu.",
+      "Quyết định xem code sai hay kỳ vọng trong test sai.",
+      "Với số thực, dùng math.isclose thay vì so sánh == trực tiếp."
+    ],
+    "vi_du": "import math\nassert math.isclose(0.1 + 0.2, 0.3)   # đúng\nassert 0.1 + 0.2 == 0.3               # AssertionError"
+  },
+  {
+    "id": "powershell_python_mix",
+    "ten": "Gõ code Python vào PowerShell (ParserError)",
+    "error_type": [
+      "ParserError"
+    ],
+    "trieu_chung": "gõ code python vào powershell terminal gõ print import from trực tiếp trong cửa sổ lệnh PS dấu nhắc lỗi parsererror CategoryInfo missing expression unexpected token",
+    "thong_bao_mau": [
+      "Missing expression after ','",
+      "Unexpected token in expression or statement",
+      "The term 'from' is not recognized",
+      "CategoryInfo : ParserError"
+    ],
+    "chan_doan": "Dấu nhắc kiểu PS D:\\... là của PowerShell: nó chỉ hiểu lệnh Windows, không hiểu code Python. Code Python chỉ gõ được sau dấu nhắc >>> của Python, hoặc viết trong file .py.",
+    "don_thuoc": [
+      "Lưu code vào file .py rồi chạy bằng: python ten_file.py.",
+      "Hoặc gõ python (hoặc py) rồi Enter, chờ thấy >>> mới gõ code; thoát bằng exit().",
+      "Dùng VS Code: nhấn nút Run để chạy file thay vì gõ tay vào terminal."
+    ],
+    "vi_du": "PS D:\\code> python demo.py     # đúng: chạy file\n>>> print('xin chào')          # đúng: dấu nhắc của Python"
+  },
+  {
+    "id": "console_question_marks",
+    "ten": "Tiếng Việt thành dấu ? trong terminal",
+    "error_type": [],
+    "trieu_chung": "tiếng Việt hiện thành dấu hỏi ? trong terminal lỗi font hiển thị tiếng Việt in ra ký tự lạ chữ có dấu thành ??? chữ bị hỏng khi gõ vào terminal",
+    "thong_bao_mau": [],
+    "chan_doan": "Terminal (nhất là PowerShell cũ) không dùng UTF-8 nên không hiển thị hoặc nhận đúng chữ có dấu. Đây là vấn đề của terminal chứ không phải code sai.",
+    "don_thuoc": [
+      "Chạy chương trình trong terminal tích hợp của VS Code.",
+      "Trong PowerShell chạy: chcp 65001, rồi $env:PYTHONIOENCODING = \"utf-8\".",
+      "Trong code thêm sys.stdout.reconfigure(encoding=\"utf-8\").",
+      "Lưu file code ở dạng UTF-8."
+    ],
+    "vi_du": "import sys\nsys.stdout.reconfigure(encoding=\"utf-8\")\nprint(\"Xin chào\")"
+  },
+  {
+    "id": "python_not_recognized",
+    "ten": "Lệnh python/pip không được nhận ra",
+    "error_type": [
+      "CommandNotFoundException",
+      "ObjectNotFound"
+    ],
+    "trieu_chung": "gõ python không chạy lệnh python không nhận ra pip không nhận ra chưa cài python PATH is not recognized windows mở store",
+    "thong_bao_mau": [
+      "'python' is not recognized as an internal or external command",
+      "The term 'python' is not recognized as the name of a cmdlet",
+      "'pip' is not recognized as an internal or external command"
+    ],
+    "chan_doan": "Windows không tìm thấy chương trình python hoặc pip: chưa cài Python, hoặc lúc cài đã không tích 'Add Python to PATH'. Đôi khi Windows còn mở Microsoft Store thay vì chạy Python.",
+    "don_thuoc": [
+      "Thử py --version (trình chạy py đi kèm bản cài Python chính thức).",
+      "Cài lại Python và tích 'Add Python to PATH' ở màn hình đầu tiên.",
+      "Dùng py -m pip hoặc python -m pip thay cho pip.",
+      "Trong VS Code, chọn đúng Python Interpreter rồi dùng terminal tích hợp."
+    ],
+    "vi_du": "py --version\npy -m pip install sentence-transformers"
+  },
+  {
+    "id": "json_decode_error",
+    "ten": "Lỗi đọc dữ liệu JSON (JSONDecodeError)",
+    "error_type": [
+      "JSONDecodeError"
+    ],
+    "trieu_chung": "đọc file json bị lỗi json không hợp lệ file json rỗng json.load json.loads sai định dạng json thiếu dấu phẩy dấu nháy đơn nháy kép dữ liệu json bị hỏng nạp file cấu hình lỗi",
+    "thong_bao_mau": [
+      "Expecting value: line 1 column 1 (char 0)",
+      "Expecting property name enclosed in double quotes: line 2 column 5 (char 10)",
+      "Expecting ',' delimiter: line 3 column 5 (char 22)",
+      "Extra data: line 1 column 5 (char 4)",
+      "Unterminated string starting at: line 2 column 10 (char 18)",
+      "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)"
+    ],
+    "chan_doan": "Python không đọc được nội dung vì nó không phải JSON hợp lệ. Nguyên nhân hay gặp: file hoặc chuỗi bị rỗng (thông báo 'Expecting value ... char 0'); dùng dấu nháy đơn thay vì nháy kép; thừa hoặc thiếu dấu phẩy (đặc biệt dấu phẩy thừa ở phần tử cuối); viết kiểu Python (True, None) thay vì kiểu JSON (true, null); hoặc đang đọc nhầm nội dung không phải JSON (ví dụ trang HTML báo lỗi). File lưu từ Notepad có thể kèm ký tự BOM đầu file.",
+    "don_thuoc": [
+      "Xem số dòng và cột trong thông báo lỗi, mở đúng vị trí đó trong file để tìm chỗ sai.",
+      "Kiểm tra file có bị rỗng không, và in nội dung ra (print) trước khi gọi json.loads.",
+      "Dùng dấu nháy kép \"...\" cho khóa và chuỗi, bỏ dấu phẩy thừa ở phần tử cuối, dùng true/false/null.",
+      "Kiểm tra nhanh bằng lệnh: python -m json.tool ten_file.json (nó chỉ ra dòng bị lỗi).",
+      "Nếu lỗi nhắc đến BOM, mở file bằng open(path, encoding=\"utf-8-sig\")."
+    ],
+    "vi_du": "# Sai: nháy đơn và dấu phẩy thừa\n{'ten': 'An', 'tuoi': 18,}\n\n# Đúng:\n{\"ten\": \"An\", \"tuoi\": 18}\n\n# Cách đọc an toàn:\nimport json\ntry:\n    with open(\"data.json\", encoding=\"utf-8\") as f:\n        data = json.load(f)\nexcept json.JSONDecodeError as err:\n    print(\"JSON sai ở dòng\", err.lineno, \"cột\", err.colno)"
+  }
+]

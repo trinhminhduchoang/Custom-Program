@@ -1,0 +1,4 @@
+Sinh viên phải đóng học phí đúng hạn vào đầu mỗi học kỳ. Học phí của một học kỳ là 12tr cho chương trình chuẩn. Sinh viên nộp muộn sẽ bị tính phí phạt 500k mỗi tuần. Hạn nộp học phí học kỳ này là 20/10/2026.
+Sinh viên phải tham dự ít nhất 80% số buổi học của mỗi môn. Sinh viên vắng quá số buổi quy định sẽ không được dự thi cuối kỳ. Mọi trường hợp vắng có lý do phải nộp đơn xin phép trước khi nghỉ.
+Điểm cuối kỳ của mỗi môn gồm điểm quá trình và điểm thi cuối kỳ. Sinh viên có điểm trung bình dưới 4.0 sẽ phải học lại môn đó. Điểm GPA từ 3.5 trở lên được xét học bổng khuyến khích học tập.
+Quy chế thi rất nghiêm. Sinh viên không được mang tài liệu vào phòng thi nếu giảng viên không cho phép. Sinh viên vi phạm quy chế thi sẽ bị đình chỉ thi và nhận điểm không.
